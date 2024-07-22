@@ -52,6 +52,7 @@ CREATE TABLE SupplyInventory (
     SupplierID INT,
     Type VARCHAR(50),
     Quantity INT,
+    ExpectedDate DATE,
     DeliveryDate DATE,
     FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
 );
@@ -101,13 +102,13 @@ INSERT INTO Suppliers (Name, SupplyType, DeliverySchedule) VALUES
 ('Supplier3', 'Vats and Tubing', 'Monthly');
 
 -- Insert sample data into SupplyInventory
-INSERT INTO SupplyInventory (SupplierID, Type, Quantity, DeliveryDate) VALUES 
-(1, 'Bottles', 1000, '2024-07-01'), 
-(1, 'Corks', 1000, '2024-07-01'), 
-(2, 'Labels', 1000, '2024-07-01'), 
-(2, 'Boxes', 1000, '2024-07-01'), 
-(3, 'Vats', 5, '2024-07-01'), 
-(3, 'Tubing', 200, '2024-07-01');
+INSERT INTO SupplyInventory (SupplierID, Type, Quantity, ExpectedDate, DeliveryDate) VALUES 
+(1, 'Bottles', 1000, '2024-07-05', '2024-07-01'), 
+(1, 'Corks', 1000, '2024-07-05', '2024-07-01'), 
+(2, 'Labels', 1000, '2024-06-29', '2024-07-01'), 
+(2, 'Boxes', 1000, '2024-06-29', '2024-07-01'), 
+(3, 'Vats', 5, '2024-07-03', '2024-07-01'), 
+(3, 'Tubing', 200, '2024-07-03', '2024-07-01');
 
 -- Insert sample data into Distributors
 INSERT INTO Distributors (Name) VALUES 
